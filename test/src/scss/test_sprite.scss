@@ -1,0 +1,71 @@
+//@import "compass";
+
+//@import "src/images/auth/*.png";
+//@include all-auth-sprites;
+
+$a: "src/images/auth/*.png?padding=20";
+$b: "src/images/auth2/*.png?algorithm=diagonal";
+
+.ico {
+  background-image: assetus-url("src/images/auth/steam.png");
+}
+
+b {
+  background-image: spritus-url($a);
+  background-size: spritus-size($a);
+  height: spritus-height($a);
+  width: spritus-width($a);
+  //background-image: ;
+  border-radius: 3px;
+  display: flex;
+}
+
+.google {
+  background-position: spritus-position($a, 'google.png');
+  height: spritus-height($a, 'google.png');
+  width: spritus-width($a, 'google');
+}
+
+.steam {
+  background-position: spritus-position($a, 'steam.png');
+}
+
+.twitter {
+  spritus: phw($a, 'twitter.png');
+}
+
+i {
+  background-image: spritus-url($b);
+}
+
+.google2 {
+  background-position: spritus-position($b, 'google.png');
+}
+
+.steam2 {
+  background-position: spritus-position($b, 'steam.png');
+}
+
+.ee {
+  display: flex;
+}
+
+.foo::before {
+  content: "foo on small";
+}
+
+@media screen and (min-width: 769px) {
+  .foo::before {
+    content: "foo on medium";
+  }
+}
+
+.bar::before {
+  content: "bar on small";
+}
+
+@media screen and (min-width: 769px) {
+  .bar::before {
+    content: "bar on medium";
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "cocktail-of-tasks",
+  "version": "4.0.0",
+  "description": "Easy task for scss, webpack, merge, copy and compress",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": "https://github.com/nurieff/cocktail-of-tasks",
+  "author": "Marat Nuriev",
+  "email": "nurieff@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "buble": "^0.15.2",
+    "buble-loader": "^0.4.0",
+    "caniuse-db": "^1.0.30000631",
+    "chalk": "^1.1.3",
+    "cli-table": "^0.3.1",
+    "glob": "^7.1.1",
+    "gulp-buble": "^0.8.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-css-assetus": "^1.0.3",
+    "gulp-css-spritus": "^1.4.3",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.0",
+    "gulp-mustache": "^2.3.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp.spritesmith": "^6.2.1",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-svgo": "^5.2.0",
+    "merge-stream": "^1.0.0",
+    "pngquant-bin": "^3.1.1",
+    "spritesmith": "^3.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "webpack": "^2.2.1",
+    "yargs": "^6.6.0"
+  },
+  "devDependencies": {
+    "through2": "^2.0.3"
+  }
+}
