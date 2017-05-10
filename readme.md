@@ -1,24 +1,24 @@
-# Spirit Gulp Task
+# Cocktail Of Tasks
 
 ```
-npm install spirit-gulp-task
+npm install cocktail-of-tasks
 ```
 
 ```
 gulp
-gulp --production
+gulp --production // For compress files if option "full" is false
 gulp watch
 gulp scss
-gulp scss webpack
-gulp scss watch
+gulp scss webpack copy
+gulp webpack watch
 gulp scss_{config_name}
 gulp scss_{config_name} watch
 ```
 
-### Пример
+### Example
 ```javascript
-var task = require('spirit-gulp-task');
-task(function (mix) {
+var cocktail = require('cocktail-of-tasks');
+cocktail(function (mix) {
 	 mix
 		 .scripts()
 		 .styles()
@@ -30,16 +30,30 @@ task(function (mix) {
 });
 ```
 
+## Options
+
+For default, source folder is `resources/assets/` and result folder is `public/`
+
+If you want to change, use
+```javascript
+CocktailOfTasks.dir.assets = 'src/';
+CocktailOfTasks.dir.public = 'dist/';
+```
+
 ## .scripts()
+Can merge multiple files into one. Compresses the resulting file.
+You can add source map.
+Translate es6 to es5 (Uses [buble](https://www.npmjs.com/package/buble))
+
 ```javascript
 mix.scripts({
-	//name: "new_name",
+	//name: "new_name", // If you want to use "gulp scripts_{name}"
 	to: "js/scripts.js",
-	source_map: true,
+	source_map: true, 
 	source_map_type: 'inline',
-	full: false,
-	babel: true,
-	//from: "/node_modules",
+	full: false, // If true — no compress
+	babel: true, // ES2015 to ES5
+	//from: "/node_modules", // Use for parent folder
 	src: [
 		"src/js/1.js",
 		"src/js/2.js",
@@ -49,6 +63,10 @@ mix.scripts({
 ```
 
 ## .scss()
+
+Uses [gulp-css-spritus](https://github.com/nurieff/gulp-css-spritus) and 
+[gulp-css-assetus](https://github.com/nurieff/gulp-css-assetus)
+
 ```javascript
 mix.scss({
 	//name: "new_name",
@@ -57,8 +75,8 @@ mix.scss({
 	source_map: true,
 	source_map_type: 'inline',
 	full: false,
-	image_dir_css: '../images/', // for image assets
-	image_dir_save: 'images/', // for image assets (default: /public/images/)
+	image_dir_css: '../images/', // for css (image-url)
+	image_dir_save: 'images/', // for save image assets
 	includePaths: [
 		//'../node_modules/compass-mixins/lib/',
 	]
@@ -66,6 +84,10 @@ mix.scss({
 ```
 
 ## .styles()
+
+Can merge multiple files into one. Compresses the resulting file.
+You can add source map.
+
 ```javascript
 mix.styles({
 	//name: "new_name",
@@ -83,6 +105,9 @@ mix.styles({
 ```
 
 ## .webpack()
+
+Uses [buble](https://www.npmjs.com/package/buble)
+
 ```javascript
 mix.webpack({
 	//name: "new_name",
@@ -95,17 +120,20 @@ mix.webpack({
 ```
 
 ## .copy()
+
+Easy copy. Can merge multiple files into one
+
 ```javascript
 mix.copy([
 	{
-		//name: "new_name",
+		//name: "new_name", // If you want to use "gulp copy_{name}"
 		src: "src/css/need_copy.css",
 		to: "css/new_name.css"
 	},
 	{
 		src: [
 			"src/css/need_copy1.css",
-			"src/css/need_copy2.css",
+			"src/css/need_copy2.css"
 		],
 		to: "css/"
 	},
@@ -113,7 +141,7 @@ mix.copy([
 		name: "new_copy_name",
 		src: [
 			"src/css/need_copy1.css",
-			"src/css/need_copy2.css",
+			"src/css/need_copy2.css"
 		],
 		to: "css/",
 		is_concat: true
@@ -121,15 +149,19 @@ mix.copy([
 	{
 		src: [
 			"src/css/need_copy1.css",
-			"src/css/need_copy2.css",
+			"src/css/need_copy2.css"
 		],
-		to: "css/new_copy_name.css",
+		to: "css/new_copy_name.css"
 	}
 ])
 ```
 
 ## .sprite()
-[Информация о format](https://github.com/twolfson/spritesheet-templates#templates)
+A very useful thing for sprites.
+
+You can get image with json and other variants 
+
+[About «format»](https://github.com/twolfson/spritesheet-templates#templates)
 ```javascript
 mix.sprite({
 	//name: "new_name",
@@ -156,6 +188,9 @@ mix.sprite({
 ```
 
 ## .compress()
+
+Compress images
+
 ```javascript
 mix.sprite({
 	//name: "new_name",
@@ -175,4 +210,4 @@ mix.sprite({
 })
 ```
 ***
-* [Для расширения gulp.pipe(...)](readme/pipe.md)
+* [For extend gulp.pipe(...)](readme/pipe.md)

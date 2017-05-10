@@ -6,6 +6,22 @@
   "scripts": {
     "start": "gulp"
   },
+  "keywords": [
+    "webpack",
+    "css",
+    "scss",
+    "script",
+    "copy",
+    "combine",
+    "imagemin",
+    "sptite",
+    "compress",
+    "gulp",
+    "mix",
+    "tasks",
+    "task",
+    "cocktail"
+  ],
   "repository": "https://github.com/nurieff/cocktail-of-tasks",
   "author": "Marat Nuriev",
   "email": "nurieff@gmail.com",

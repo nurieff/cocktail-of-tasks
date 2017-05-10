@@ -35,8 +35,8 @@ Task_SCSS.prototype.constructor = Task_SCSS;
 
 Task_SCSS.prototype.getDefaultConfig = function() {
     return {
-        "from": "scss/main.scss",
-        "to": "css/"
+        from: "scss/main.scss",
+        to: "css/"
     }
 };
 
