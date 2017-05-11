@@ -1,5 +1,7 @@
 # Cocktail Of Tasks
 
+Cocktail light and powerful task for gulp 
+
 ```
 npm install cocktail-of-tasks
 ```
@@ -16,6 +18,7 @@ gulp scss_{config_name} watch
 ```
 
 ### Example
+Paste the code into your `gulpfile.js` and configure it
 ```javascript
 var cocktail = require('cocktail-of-tasks');
 cocktail(function (mix) {
