@@ -99,11 +99,8 @@ Task_Copy.prototype.run = function(config) {
         };
 
         return CocktailOfTasks.gulp.src(prepareSrc)
-            .pipe(CocktailOfTasks.plumber({
-                errorHandler: this.report.bind(this, src, path_to, false)
-            }))
+            //.pipe(CocktailOfTasks.plumber(this.reportError.bind(this,prepareSrc, path_to)))
             .pipe(CocktailOfTasks.gulp.dest(path_to))
-            //.pipe(CocktailOfTasks.notify(this.report.bind(this,src,path_to,true)))
             .pipe(CocktailOfTasks.notify(this.reportOfCopy.bind(this, path_to)))
             ;
 
@@ -127,9 +124,7 @@ Task_Copy.prototype.run = function(config) {
         }
 
         return CocktailOfTasks.gulp.src(prepareSrc)
-            .pipe(CocktailOfTasks.plumber({
-                errorHandler: this.report.bind(this, prepareSrc, copy_to + concat_name, false)
-            }))
+            //.pipe(CocktailOfTasks.plumber(this.reportError.bind(this,prepareSrc, copy_to + concat_name)))
             .pipe(concat(concat_name))
             .pipe(CocktailOfTasks.gulp.dest(copy_to))
             .pipe(CocktailOfTasks.notify(this.report.bind(this, prepareSrc, copy_to + concat_name, true, list)))
