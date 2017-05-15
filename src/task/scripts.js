@@ -87,9 +87,7 @@ Task_Scripts.prototype.run = function(config) {
     }
 
     return CocktailOfTasks.gulp.src(src)
-        .pipe(CocktailOfTasks.plumber({
-            errorHandler: this.report.bind(this, src, copy_to, false)
-        }))
+        .pipe(CocktailOfTasks.plumber(this.reportError.bind(this,src,copy_to)))
         .pipe(gulpif(sourceMap, sourcemaps.init()))
         .pipe(gulpif(babelDo, buble()))
         .pipe(concat(concat_name))

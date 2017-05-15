@@ -79,9 +79,7 @@ Task_Styles.prototype.run = function(config) {
     var _dest = copy_to + concat_name;
 
     return CocktailOfTasks.gulp.src(src)
-        .pipe(CocktailOfTasks.plumber({
-            errorHandler: this.report.bind(this, _src, _dest, false)
-        }))
+        .pipe(CocktailOfTasks.plumber(this.reportError.bind(this,_src, _dest)))
         .pipe(gulpif(sourceMap, sourcemaps.init()))
         .pipe(concat(concat_name))
         .pipe(gulpif(

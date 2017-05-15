@@ -38,7 +38,7 @@ task(function(mix) {
         })
         .copy([
             {
-                src: "src/css/be_new_copy.css",
+                src: "src/css/-be_new_copy.css",
                 to: "css/new_copy.css",
                 min: true
             },
