@@ -1,6 +1,6 @@
 {
   "name": "cocktail-of-tasks",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Easy task for scss, webpack, merge, copy and compress",
   "main": "gulpfile.js",
   "scripts": {
@@ -42,7 +42,6 @@
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.3.0",
-    "gulp-mustache": "^2.3.0",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
@@ -59,7 +58,5 @@
     "webpack": "^2.6.1",
     "yargs": "^6.6.0"
   },
-  "devDependencies": {
-    "through2": "^2.0.3"
-  }
+  "devDependencies": {}
 }

@@ -96,9 +96,7 @@ Task_SCSS.prototype.run = function(config, callback) {
     var _dest = path_to + filename_to;
 
     return CocktailOfTasks.gulp.src(_src)
-        .pipe(CocktailOfTasks.plumber({
-            errorHandler: this.report.bind(this, _src, _dest, false)
-        }))
+        .pipe(CocktailOfTasks.plumber(this.reportError.bind(this,_src, _dest)))
         .pipe(gulpif(sourceMap, sourcemaps.init()))
         .pipe(sass({
             //outputStyle: (CocktailOfTasks.isProduction && !full ? 'compressed' : 'expanded'),

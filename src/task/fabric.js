@@ -156,6 +156,11 @@ p.report = function(src, dest, success, list) {
     CocktailOfTasks.report.add(this._default_config, src, dest, success, list);
 };
 
+p.reportError = function(src, dest, error) {
+    console.log(error.toString());
+    this.report(src, dest, false);
+};
+
 p.reportAlias = function(alias, src, dest, success, list) {
     CocktailOfTasks.report.add(this._default_config + '-' + alias, src, dest, success, list);
 };

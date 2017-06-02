@@ -99,7 +99,6 @@ CocktailOfTasks.dir = {
 CocktailOfTasks.path = require('./src/path')();
 
 CocktailOfTasks.gulp = gulp;
-CocktailOfTasks.pipe = require('through2').obj;
 CocktailOfTasks.plumber = require('gulp-plumber');
 CocktailOfTasks.notify = require('gulp-notify');
 CocktailOfTasks.report = require('./src/report')();
