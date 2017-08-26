@@ -5,6 +5,11 @@ var argv = require('yargs').argv
     , _params = argv._.slice(0)
 ;
 
+console.log('!!!');
+console.log('The package is deprecated');
+console.log('Please use the gulp-query is more easy and more flexible. https://www.npmjs.com/package/gulp-query');
+console.log('!!!');
+
 // console.log(argv);
 //process.exit();
 

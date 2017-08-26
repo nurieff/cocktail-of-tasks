@@ -1,6 +1,6 @@
 {
   "name": "cocktail-of-tasks",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "Easy task for scss, webpack, merge, copy and compress",
   "main": "gulpfile.js",
   "scripts": {

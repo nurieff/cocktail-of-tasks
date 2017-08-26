@@ -1,4 +1,10 @@
-# Cocktail Of Tasks
+# Important
+Please use the [gulp-query](https://www.npmjs.com/package/gulp-query) is more easy and more flexible.
+The **gulp-query** uses plugins and you can customize your cocktail
+
+[Try gulp-query](https://www.npmjs.com/package/gulp-query)
+
+## Cocktail Of Tasks — *Deprecated* 
 
 Cocktail light and powerful task for gulp 
 
@@ -213,4 +219,3 @@ mix.sprite({
 })
 ```
 ***
-* [For extend gulp.pipe(...)](readme/pipe.md)
